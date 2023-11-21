@@ -1,9 +1,17 @@
 #!/usr/bin/python3
 
 def list_division(my_list_1, my_list_2, list_length):
-    """ Create a list with the results of divisions 
-    """
+    """Divides elements of 2 lists, 
+    each with its own correspondant.
 
+    Args:
+        my_list_1 (list): The first list.
+        my_list_2 (list): The second list.
+        list_length (int): The number of elements to divide.
+
+    Returns:
+        A list containing all the divisions.
+    """
     nlist = []
     for i in range(0, list_length):
         try:
