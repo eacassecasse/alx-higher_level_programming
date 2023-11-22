@@ -58,7 +58,7 @@ class Square:
             [print(" ", end="") for j in range(0, self.__position[0])]
             [print("#", end="") for k in range(0, self.__size)]
             print("")
-    
+ 
     def __str__(self):
         """Default representation of a Square."""
         if self.__size != 0:
