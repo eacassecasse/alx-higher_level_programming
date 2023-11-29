@@ -73,14 +73,16 @@ class Rectangle:
             if i != self.__height - 1:
                 res.append("\n")
 
-        return "".join(res)
+        return ("".join(res))
 
     def __repr__(self):
         """
-        Returns a string that can be evaluated by eval
-        function to create new rectangles
+        Returns a representation of the
+        Rectangle instantiation.
         """
-        return "Rectangle(" + str(self.__width) + "," + str(self.__height) + ")"
+        ret = "Rectangle(" + str(self.__width)
+        ret += "," + str(self.__height) + ")"
+        return (ret)
 
     def __del__(self):
         """Method called before the rectangle is deleted."""

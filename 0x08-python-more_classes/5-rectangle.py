@@ -70,7 +70,14 @@ class Rectangle:
         return res
 
     def __repr__(self):
-        return "Rectangle(" + str(self.__width) + "," + str(self.__height) + ")"
+        """
+        Returns a representation of the
+        Rectangle instantiation.
+        """
+        ret = "Rectangle(" + str(self.__width)
+        ret += "," + str(self.__height) + ")"
+        return (ret)
 
     def __del__(self):
+        """Message printed when a rectangle is deleted."""
         print("Bye rectangle...")

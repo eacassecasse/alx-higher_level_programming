@@ -77,10 +77,12 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string that can be evaluated by eval
-        function to create new rectangles
+        Returns a representation of the
+        Rectangle instantiation.
         """
-        return "Rectangle(" + str(self.__width) + "," + str(self.__height) + ")"
+        ret = "Rectangle(" + str(self.__width)
+        ret += "," + str(self.__height) + ")"
+        return (ret)
 
     def __del__(self):
         """Method called before the rectangle is deleted."""
@@ -97,6 +99,6 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
         if rect_1.area() >= rect_2.area():
-            return rect_1
+            return (rect_1)
         else:
-            return rect_2
+            return (rect_2)
