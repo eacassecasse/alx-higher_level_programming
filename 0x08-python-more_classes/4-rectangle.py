@@ -13,8 +13,8 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -25,7 +25,7 @@ class Rectangle:
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -38,7 +38,7 @@ class Rectangle:
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -50,12 +50,12 @@ class Rectangle:
         """Computes and return the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
-        else:
-            return ((2 * self.__width) + (2 * self.__height))
+
+        return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self) -> str:
         """Return the official rectangle representation
-        for end-user with the print_symbol character."""
+        for end-user with the # character."""
         if self.__width == 0 and self.__height == 0:
             return ("")
 
