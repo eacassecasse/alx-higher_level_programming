@@ -4,14 +4,13 @@
 
 
 class Rectangle:
-    """Represent a rectangle."""
+    """Represent a rectangle.
 
-    """Initialize a new rectangle.
-
-        Args:
+        Attributes:
             number_of_instances (int): number of rectangles created.
-            print_symbol (string): default character to be printed.
+            print_symbol (any): default character to be printed.
     """
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -74,8 +73,8 @@ class Rectangle:
 
         if rect_1.area() >= rect_2.area():
             return (rect_1)
-        else:
-            return (rect_2)
+
+        return (rect_2)
 
     @classmethod
     def square(cls, size=0):
@@ -97,7 +96,7 @@ class Rectangle:
         res = []
 
         for i in range(self.__height):
-            [res.append(str(self.print_symbol)) for _ in range(self.__width)]
+            [res.append(self.print_symbol) for _ in range(self.__width)]
 
             if i != self.__height - 1:
                 res.append("\n")
