@@ -22,12 +22,11 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the current width of the rectangle."""
+        """Get/set the current width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the current width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -36,12 +35,11 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the current height of the rectangle."""
+        """Get/set the current height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the current height of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -50,12 +48,12 @@ class Rectangle:
 
     def area(self):
         """Computes and return the rectangle area."""
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Computes and return the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
-            return 0
+            return (0)
         else:
             return (2 * self.__width) + (2 * self.__height)
 
@@ -73,14 +71,16 @@ class Rectangle:
             if i != self.__height - 1:
                 res.append("\n")
 
-        return "".join(res)
+        return ("".join(res))
 
     def __repr__(self):
         """
-        Returns a string that can be evaluated by eval
-        function to create new rectangles
+        Returns a representation of the
+        Rectangle instantiation.
         """
-        return "Rectangle(" + str(self.__width) + "," + str(self.__height) + ")"
+        ret = "Rectangle(" + str(self.__width)
+        ret += "," + str(self.__height) + ")"
+        return (ret)
 
     def __del__(self):
         """Method called before the rectangle is deleted."""
@@ -97,18 +97,17 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
         if rect_1.area() >= rect_2.area():
-            return rect_1
+            return (rect_1)
         else:
-            return rect_2
+            return (rect_2)
 
     @classmethod
     def square(cls, size=0):
         """
-        Initialize a new rectangle.
+        Initialize a new square.
 
         Args:
             size (int): Defines the width and
             height of the square.
-
         """
         return (cls(size, size))

@@ -18,12 +18,11 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the current width of the rectangle."""
+        """Get/set the current width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the current width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -32,12 +31,11 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the current height of the rectangle."""
+        """Get/set the current height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the current height of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -46,34 +44,33 @@ class Rectangle:
 
     def area(self):
         """Computes and return the rectangle area."""
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Computes and return the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
-            return (2 * self.__width) + (2 * self.__height)
+            return ((2 * self.__width) + (2 * self.__height))
 
     def __str__(self) -> str:
         """Return the official rectangle representation
-        for end-user with the # character."""
-        res = ""
+        for end-user with the print_symbol character."""
+        if self.__width == 0 and self.__height == 0:
+            return ("")
 
-        if self.__width != 0 and self.__height != 0:
-            for i in range(0, self.__height):
-                res += "#" * self.__width
+        res = []
 
-                if i < self.__height - 1:
-                    res += "\n"
+        for i in range(self.__height):
+            [res.append("#") for _ in range(self.__width)]
 
-        return (res)
+            if i != self.__height - 1:
+                res.append("\n")
+
+        return ("".join(res))
 
     def __repr__(self):
-        """
-        Returns a representation of the
-        Rectangle instantiation.
-        """
+        """Returns a representation of the Rectangle."""
         ret = "Rectangle(" + str(self.__width)
-        ret += "," + str(self.__height) + ")"
+        ret += ", " + str(self.__height) + ")"
         return (ret)
