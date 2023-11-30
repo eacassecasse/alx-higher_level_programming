@@ -6,6 +6,12 @@
 class Rectangle:
     """Represent a rectangle."""
 
+    """Initialize a new rectangle.
+
+        Args:
+            number_of_instances (int): number of rectangles created.
+            print_symbol (string): default character to be printed.
+    """
     number_of_instances = 0
     print_symbol = "#"
 
@@ -16,8 +22,8 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         type(self).number_of_instances += 1
 
     @property
@@ -29,7 +35,7 @@ class Rectangle:
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -42,7 +48,7 @@ class Rectangle:
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -56,36 +62,6 @@ class Rectangle:
             return (0)
         else:
             return (2 * self.__width) + (2 * self.__height)
-
-    def __str__(self) -> str:
-        """Return the official rectangle representation
-        for end-user with the print_symbol character."""
-        if self.__width == 0 and self.__height == 0:
-            return ""
-
-        res = []
-
-        for i in range(self.__height):
-            [res.append(str(self.print_symbol)) for _ in range(self.__width)]
-
-            if i != self.__height - 1:
-                res.append("\n")
-
-        return ("".join(res))
-
-    def __repr__(self):
-        """
-        Returns a representation of the
-        Rectangle instantiation.
-        """
-        ret = "Rectangle(" + str(self.__width)
-        ret += "," + str(self.__height) + ")"
-        return (ret)
-
-    def __del__(self):
-        """Method called before the rectangle is deleted."""
-        type(self).number_of_instances -= 1
-        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -111,3 +87,33 @@ class Rectangle:
             height of the square.
         """
         return (cls(size, size))
+
+    def __str__(self) -> str:
+        """Return the official rectangle representation
+        for end-user with the print_symbol character."""
+        if self.__width == 0 and self.__height == 0:
+            return ""
+
+        res = []
+
+        for i in range(self.__height):
+            [res.append(str(self.print_symbol)) for _ in range(self.__width)]
+
+            if i != self.__height - 1:
+                res.append("\n")
+
+        return ("".join(res))
+
+    def __repr__(self):
+        """
+        Returns a representation of the
+        Rectangle instantiation.
+        """
+        ret = "Rectangle(" + str(self.__width)
+        ret += ", " + str(self.__height) + ")"
+        return (ret)
+
+    def __del__(self):
+        """Method called before the rectangle is deleted."""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
