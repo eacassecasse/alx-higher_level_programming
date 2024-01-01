@@ -1,0 +1,1 @@
+This folder holds all the required test cases for **Python Inheritance** tasks

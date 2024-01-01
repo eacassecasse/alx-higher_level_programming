@@ -1,0 +1,1 @@
+This  folder holds the answers for **Python Inheritance** task
