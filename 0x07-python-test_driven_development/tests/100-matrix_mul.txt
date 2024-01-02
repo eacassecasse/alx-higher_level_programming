@@ -3,11 +3,11 @@
 How to Use 100-matrix_mul.py
 ============================
 
-This module defines a matrix multiplication function ``matrix_mul(m_a, m_b)``.
+This module defines a matrix multiplication function.
 
 Usage
 =====
-``matrix_mul(...)`` returns a new matrix representing the multiplication of
+``matrix_mul(...)`` returns a matrix containing the results of multiplication of
 ``m_a`` by ``m_b``.
 
 ::

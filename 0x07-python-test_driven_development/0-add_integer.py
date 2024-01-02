@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines add_integer function"""
+"""This module defines 0-add_integer function"""
 
 
 def add_integer(a, b=98):
@@ -9,8 +9,12 @@ def add_integer(a, b=98):
     Args:
         a (int): first number to add
         b (int): second number to add
+
     Raises:
         TypeError: If either a or b are not integers
+
+    Returns:
+        int: the sum of 2 integers
     """
     if not type(a) in [int, float]:
         raise TypeError("a must be an integer")
