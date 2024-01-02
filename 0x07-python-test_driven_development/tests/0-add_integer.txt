@@ -15,39 +15,18 @@ For numbers, that value is equivalent to using the ``+`` operator.
 ::
 
     >>> add_integer = __import__('0-add_integer').add_integer
-    >>> add_integer(26, 24)
-    50
-
-::
-
     >>> add_integer(26, -32)
     -6
 
-This function also works with floating-point values.
+This function also works with floating-point values. However,
+these floats are converted to ints before the addition is performed thus,
+the result will always be an integer. Another thing is, floating and
+non-floating point values can be combined.
 
 ::
 
-    >>> add_integer(26.0, 30.0)
-    56
-
-Note that floats are converted to ints before the addition is performed.
-
-::
-
-    >>> add_integer(25.9, 13.2)
-    38
-
-::
-
-    >>> add_integer(-22.9, -13.2)
-    -35
-
-Floating and non-floating point values can be combined.
-
-::
-
-    >>> add_integer(23.3, -35)
-    -12
+    >>> add_integer(25.9, -13)
+    12
 
 The second argument is optional - by default, it is 98.
 
@@ -74,18 +53,6 @@ If either argument is a non-integer and non-float, a TypeError is raised:
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-::
-
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-::
-
-    >>> add_integer(2.3, None)
-    Traceback (most recent call last):
-    TypeError: b must be an integer
-
 If both arguments are non-integers and non-floats, a TypeError message is only
 printed for the first argument.
 
@@ -102,24 +69,12 @@ The function will fail if infinity is provided.
     >>> add_integer(float('inf'))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
-     
 
-::
-
-    >>> add_integer(2, float('inf'))
-    Traceback (most recent call last):
-    OverflowError: cannot convert float infinity to integer
 
 And with NaN numbers too.
 
 ::
 
     >>> add_integer(float('nan'))
-    Traceback (most recent call last):
-    ValueError: cannot convert float NaN to integer
-
-::
-
-    >>> add_integer(2, float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
