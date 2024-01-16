@@ -1,2 +1,3 @@
-# Displays all the existent databases
+-- Displays all the existent databases
 SHOW DATABASES;
+
