@@ -1,0 +1,1 @@
+# This folder contains the answers for JavaScript Warm up task.
