@@ -8,22 +8,6 @@ const Rectangle = class {
     }
   }
 
-  set width (width) {
-    this.width = width;
-  }
-
-  get width () {
-    return this.width;
-  }
-
-  set height (height) {
-    this.height = height;
-  }
-
-  get height () {
-    return this.height;
-  }
-
   print () {
     for (let i = 0; i < this.height; i++) {
       console.log('X'.repeat(this.width));
