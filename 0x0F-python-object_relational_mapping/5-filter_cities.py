@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  lists all cities from a state passed as argument """
+"""  Lists all cities from a specific state """
 import MySQLdb
 import sys
 

@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-""" prints the State object with the name passed as argument from the database
+""" Updates the name of the State with ```id=2``` to ```New Mexico```
 """
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
@@ -13,6 +12,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State).filter_by(id=2).first()
-    new_instance.name = 'New Mexico'
+    _instance = session.query(State).filter_by(id=2).first()
+    _instance.name = 'New Mexico'
     session.commit()

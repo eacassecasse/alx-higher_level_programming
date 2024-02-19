@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""  Lists only states that starts with N from
-the database hbtn_0e_0_usa """
+"""  Lists only states that start with N from
+a database """
 
 import MySQLdb
 import sys

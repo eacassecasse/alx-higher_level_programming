@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+""" Lists all the states from a database ordered by id
 """
 import sys
 from model_state import Base, State

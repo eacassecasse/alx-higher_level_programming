@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """  A SQL injection safe query to display the state
-that matches the one passed as argument from the database hbtn_0e_0_usa """
+that matches the one passed as argument from a database """
 import MySQLdb
 import sys
 

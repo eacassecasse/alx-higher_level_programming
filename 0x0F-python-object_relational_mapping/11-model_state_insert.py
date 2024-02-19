@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" prints the State object with the name passed as argument from the database
+""" Adds the State ```Louisiana``` into the database
 """
 import sys
 from model_state import Base, State
@@ -13,8 +13,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = State(name='Louisiana')
-    session.add(new_state)
-    new_instance = session.query(State).filter_by(name='Louisiana').first()
-    print(new_instance.id)
+    _state = State(name='Louisiana')
+    session.add(_state)
+    _instance = session.query(State).filter_by(name='Louisiana').first()
+    print(_instance.id)
     session.commit()

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" prints the State object with the name passed as argument from the database
+""" Displays the State that the corresponds to the
+one passed as argument
 """
 import sys
 from model_state import Base, State

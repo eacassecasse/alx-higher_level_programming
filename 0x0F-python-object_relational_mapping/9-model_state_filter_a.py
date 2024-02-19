@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" prints the first State object from the database hbtn_0e_6_usa
+""" Lists all the States that contain letter ```a```
 """
 import sys
 from model_state import Base, State

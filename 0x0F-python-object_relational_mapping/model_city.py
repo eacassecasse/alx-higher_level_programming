@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a City
+A definition of City class
 """
 from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -9,7 +9,12 @@ from sqlalchemy.ext.declarative import declarative_base
 
 class City(Base):
     """
-    Class that defines each city
+    Defines the model for a city
+
+    Args:
+        id(int): The identifier of the city
+        name(str): The name of the city
+        state_id(int): The state where the city belongs
     """
     __tablename__ = 'cities'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)

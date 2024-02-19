@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """  Displays the state that matches the one passed as argument
-from the database hbtn_0e_0_usa """
+from a database """
 
 import MySQLdb
 import sys

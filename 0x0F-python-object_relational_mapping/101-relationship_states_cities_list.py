@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" prints the State object with the name passed as argument from the database
+""" Lists all the States with their own cities.
 """
 import sys
 from relationship_state import Base, State
@@ -15,8 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).order_by(State.id):
-        print(instance.id, instance.name, sep=": ")
-        for city_ins in instance.cities:
+    for _state in session.query(State).order_by(State.id):
+        print(_state.id, _state.name, sep=": ")
+        for _city in _state.cities:
             print("    ", end="")
-            print(city_ins.id, city_ins.name, sep=": ")
+            print(_city.id, _city.name, sep=": ")
