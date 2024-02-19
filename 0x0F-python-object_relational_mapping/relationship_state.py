@@ -15,9 +15,9 @@ class State(Base):
     Definition of the State Class
 
     Args:
-    id(int): The identifier of the state
-    name(str): The name of the state
-    cities(list): Cities of the State
+        id(int): The identifier of the state
+        name(str): The name of the state
+        cities(list): Cities of the State
     """
     __tablename__ = 'states'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
