@@ -37,7 +37,7 @@ To use these solutions in your project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/eacassecasse/alx-high_level_programming.git
+   git clone https://github.com/eacassecasse/alx-higher_level_programming.git
    ```
 
 2. Navigate to the directory:
